@@ -21,22 +21,20 @@ def tab_complex(N):
             tab[x,y] = x + y*I
     return tab
 
-a = time.time()
-tab_complex(10000)
-print("Temps pour la fonction 1 : ", time.time()-a)
-
 def tab_complex_v2(N):
     """meme fonction mais plus rapide"""
-    tab =  np.arange(10,dtype=np.complex64)
-    tab = np.stack([tab]*10,axis=1)
-    I=1j
-    for x in range(np.ravel(tab).size):
-        np.ravel(tab)[x] = x//10+ x%10*I 
-    return tab
+    tab =  np.arange(N,dtype=np.complex64)
+    im = np.stack([tab]*N)
+    tab = np.stack([tab]*N,axis=1)
+    return tab +1j*im
     
-b = time.time()
-tab_complex_v2(10000)
-print("Temps pour la fonction 2 : ", time.time()-b)
+#Tests de concatenation
+a = np.arange(8, dtype=np.complex64)
+b = np.arange(8)
+b = b*1j
+#print(b)
+#print(a+b)
+
 
 
 
