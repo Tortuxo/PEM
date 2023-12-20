@@ -34,7 +34,7 @@ b = np.arange(8)
 b = b*1j
 #print(b)
 #print(a+b)
-
+j = np.random.randint(0,800,size=(5,8))
 
 
 
