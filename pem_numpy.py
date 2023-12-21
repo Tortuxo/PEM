@@ -34,7 +34,18 @@ b = np.arange(8)
 b = b*1j
 #print(b)
 #print(a+b)
-j = np.random.randint(0,800,size=(5,8))
+j = np.random.randint(-10,10,size=(5,8))
 
 
+x[x<500]=np.array([11,1,13])
+
+def f(A):
+    """prend en paramètre un tableau Numpy A et qui renvoie un tableau B qui est une copie de A dans laquelle les nombres  <0
+    ont été remplacés par  0
+    et les nombres  >1
+    ont été remplacés par  1"""
+    B = A.copy()
+    B[B<0]=0
+    B[B>1]=1
+    return B
 
